@@ -6,7 +6,7 @@ int palindrom(int x) {
 	int new_x, cifra, y;
         new_x = x;
 	y = 0;
-	while(!new_x) {
+	while(new_x > 0) {
 		cifra = new_x % 10; 
 		y = y * 10 + cifra;
 		new_x = new_x / 10;
@@ -17,19 +17,24 @@ int palindrom(int x) {
 	return 0;
 }
 
-void citire(int *x,int *y) {
+void citire(int *x, int *y) {
 	scanf("%d%d",x,y);
 }
 
-void afisare(int x,int y) {
+void afisare(int x, int y) {
 	printf("%d %d\n",x,y);
 }
 
 int main() {
 	int x,y;
 	citire(&x,&y);
-	if (palindrom(x)== 1 && palindrom(y)== 1) {
+	int n1, n2;
+	n1 = palindrom(x);
+	n2 = palindrom(y);
+	if (n1 == 1 && n2 == 1 ) {
 		printf("Da\n");
+	} else {
+		printf("Nu\n");
 	}
 	afisare(x,y);
 	return 0;
